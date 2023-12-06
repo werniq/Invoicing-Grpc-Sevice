@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package invoice;
+
+option go_package = "github.com/Chained/invoice-service";
+
+import "google/protobuf/timestamp.proto";
+
+message InvoiceRequest {
+  int64 id = 1;
+  int64 quantity = 2;
+  int64 amount = 3;
+  string product = 4;
+  string firstname = 5;
+  string lastname = 6;
+  string email = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message InvoiceResponse {
+  bool error = 1;
+  string message = 2;
+}
+
+service InvoiceService {
+  rpc GenerateInvoice(InvoiceRequest) returns (InvoiceResponse) {} ;
+}
