@@ -51,10 +51,10 @@ func main() {
 			pwd  string
 		}{
 			// 25, 465, 587, 2525
-			host: "sandbox.smtp.mailtrap.io",
-			port: 587,
-			user: "e8c97afb1b4493",
-			pwd:  "a36800b4589068",
+			host: os.Getenv("YOUR_SMTP_HOST"),
+			port: os.Getenv("YOUR_SMTP_PORT"),
+			user: os.Getenv("YOUR_SMTP_USERNAME"),
+			pwd:  os.Getenv("YOUR_SMTP_USER_PW"),
 		},
 		InvoiceHttpServerPort: 8082,
 		InvoiceGrpcServerPort: 50053,
